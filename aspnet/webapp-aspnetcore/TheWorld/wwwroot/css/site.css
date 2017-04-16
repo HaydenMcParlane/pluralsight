@@ -29,20 +29,6 @@ input[type=text], input[type=password], textarea {
     width: 100%;
 }
 
-#sidebar {
-    background: #2a2c36;
-    color: #eee;
-    position: fixed;
-    height: 100%;
-    width: 250px;
-    overflow: hidden;
-    left: 0;
-    margin: 0;
-}
-
-#wrapper {
-    margin: 0 0 0 250px;
-}
 
 .headshot{
     max-width: 50px;
@@ -62,3 +48,31 @@ input[type=text], input[type=password], textarea {
     font-weight: bold;
 }
 
+#sidebar.hide-sidebar{
+    left: -250px;
+    transition: left ease .25s;
+}
+
+#wrapper.hide-sidebar{
+    margin-left: 0;
+    /* Browsers support different syntax for transition. IDEs have auto-complete
+    that will add in various browser specific implementations. Be aware of this.*/
+    transition: margin-left ease .25s;
+}
+
+#sidebar {
+    background: #2a2c36;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
+    margin: 0;
+    transition: left ease .25s;
+}
+
+#wrapper {
+    margin: 0 0 0 250px;
+    transition: margin-left ease .25s;
+}
