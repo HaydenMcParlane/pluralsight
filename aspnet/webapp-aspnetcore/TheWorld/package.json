@@ -1,0 +1,16 @@
+{
+  "name": "theworld",
+  "version": "1.0.0",
+  "description": "We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hayden McParlane",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^2.0.41",
+    "bower": "^1.8.0",
+    "jquery": "^3.2.1"
+  }
+}

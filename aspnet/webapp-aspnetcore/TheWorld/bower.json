@@ -1,0 +1,20 @@
+{
+  "name": "theworld",
+  "description": "Pluralsight aspnet tutorial project.",
+  "main": "index.js",
+  "authors": [
+    "Hayden McParlane"
+  ],
+  "license": "ISC",  
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "wwwroot/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "latest",
+    "jQuery": "3.2.1"
+  }
+}
