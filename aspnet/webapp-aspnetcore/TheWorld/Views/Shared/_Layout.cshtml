@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The World - @ViewBag.Title</title>
+        <meta charset="utf-8" />        
+        
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="~/css/site.css" />        
+
+    </head>
+    <body>
+        <div id="sidebar">
+            <img class="headshot" src="~/img/hayden.jpg" alt="headshot" />            
+            <span id="username">Hayden McParlane</span>
+            <ul class="menu">
+                <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
+                <li><a asp-controller="App" asp-action="About">About</a></li>
+                <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+            </ul>
+        </div>        
+
+        <div id="wrapper">
+            <div id="main">
+                <div>
+                    <button id="sidebarToggle">Hide Menu</button>
+                </div>
+                @RenderBody()
+            </div>
+            <div id="footer">
+                &copy; 2015 Architacta, Inc
+            </div>
+        </div>        
+
+        <!-- Libraries/Frameworks -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            document.JQuery || document.write('<script type="text/javascript" src="~/lib/jQuery/dist/jquery.js"><\/script>');
+        </script>
+
+        <!-- Custom Styles/Scripts -->        
+        <script type="text/javascript" src="~/js/site.js"></script>
+    </body>
+</html>
