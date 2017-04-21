@@ -13,13 +13,22 @@ $(document).ready(function(){
     $("#sidebarToggle").on("click", function(){
         sidebarAndWrapper.toggleClass("hide-sidebar");
         var toggleButton = $(this);
+        var toggleButtonIcon = toggleButton.children("i");
         switch(sidebarAndWrapper.hasClass("hide-sidebar")){
-            case true: toggleButton.text("Show Menu"); break;
-            case false: toggleButton.text("Hide Menu"); break;
+            case true: {
+                toggleButtonIcon.removeClass("fa-chevron-left");
+                toggleButtonIcon.addClass("fa-chevron-right");
+                break;
+            }
+            case false: { 
+                toggleButtonIcon.removeClass("fa-chevron-right");
+                toggleButtonIcon.addClass("fa-chevron-left");
+                break; 
+            }
             default:
                 alert("Logical Error: hide-sidebar should be either present or not.")
-        }
-    }); 
-
-
+        }        
+    });
+    
+         
 });

@@ -9,6 +9,7 @@
   "author": "Hayden McParlane",
   "license": "ISC",
   "devDependencies": {
+    "@types/bootstrap": "^3.3.32",
     "@types/jquery": "^2.0.41",
     "bower": "^1.8.0",
     "jquery": "^3.2.1"

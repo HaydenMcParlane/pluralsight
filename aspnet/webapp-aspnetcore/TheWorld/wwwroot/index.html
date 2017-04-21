@@ -3,7 +3,12 @@
     <head>
         <title>The World</title>
         <meta charset="utf-8" />        
-        
+
+        <!-- TODO: Implement CDN with fallback for CSS files -->
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />        
+        <link rel="stylesheet" href="lib/bootswatch/yeti/bootstrap.css" />
+        <link rel="stylesheet" href="lib/components-font-awesome/css/font-awesome.css" />
+
         <!-- Custom Styles -->
         <link rel="stylesheet" href="css/site.css" />        
 
@@ -12,43 +17,78 @@
         <div id="sidebar">
             <img class="headshot" src="img/hayden.jpg" alt="headshot" />            
             <span id="username">Hayden McParlane</span>
-            <ul class="menu">
+            <nav class="menu">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-            </ul>
+            </nav>
         </div>        
 
         <div id="wrapper">
-            <div id="main">
-                <div>
-                    <button id="sidebarToggle">Hide Menu</button>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <button class="btn btn-primary" id="sidebarToggle">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <a class="navbar-brand" href="/">The World</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="btn btn-sm btn-info" href="#">
+                                <i class="fa fa-save"></i> Save
+                            </a>                            
+                        </li>
+                        <li>
+                            <a class="btn btn-sm btn-info" href="#">
+                                <i class="fa fa-print"></i> Print
+                            </a>                            
+                        </li>
+                    </ul>
                 </div>
-                <h1>The World</h1>
-                <p id="coming-soon">This will be a fun website soon!</p>
+            </nav>
 
-                <form>
-                    <div>
-                        <label>Date</label>
-                        <input />
+            <div id="main" class="container-fluid">                
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>The World</h1>
+                        <p id="coming-soon">This will be a fun website soon!</p>
+
+                        <form>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input class="form-control"/>
+                            </div>     
+                            <div><input class="btn btn-success" type="submit" value="Add" /></div>           
+                        </form>                        
                     </div>
-                    <div>
-                        <label>Location</label>
-                        <input />
-                    </div>     
-                    <div><input type="submit" value="Add" /></div>           
-                </form>
+                    <div class="col-md-6">
+                        <h2>The Map</h2>
+                    </div>
+                </div>                            
+
             </div>
-            <div id="footer">
-                &copy; 2015 Architacta, Inc
+            <div id="footer" class="container-fluid">
+                <div class="navbar navbar-inverse navbar-fixed-bottom">
+                    <h4 class="text-center text-info">&copy; 2015 Architacta, Inc</h4>
+                </div>
             </div>
         </div>        
 
-        <!-- Libraries/Frameworks -->
+        <!-- JQuery -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
             document.JQuery || document.write('<script type="text/javascript" src="lib/jQuery/dist/jquery.js"><\/script>');
         </script>
+
+        <!-- Bootstrap JQuery -->        
+        <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
 
         <!-- Custom Styles/Scripts -->        
         <script type="text/javascript" src="js/site.js"></script>
