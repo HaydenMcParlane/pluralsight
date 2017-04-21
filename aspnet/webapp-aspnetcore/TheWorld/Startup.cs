@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TheWorld.Models;
+using AutoMapper;
 
 namespace TheWorld
 {
@@ -22,7 +23,7 @@ namespace TheWorld
                 .AddEnvironmentVariables();
             
             _appConfig = builder.Build();
-        }
+        }        
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -52,7 +53,12 @@ namespace TheWorld
                     name: "Default", 
                     template: "{controller}/{action}/{id?}",
                     defaults: new {controller = "App", action="Index"});
-            });            
+            }); 
+
+            Mapper.Initialize(config => 
+            {
+                config.CreateMap<ViewModels.Trip, Models.Trip>().ReverseMap();
+            });                       
         }
     }
 }
