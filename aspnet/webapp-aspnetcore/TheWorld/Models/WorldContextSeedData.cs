@@ -13,7 +13,7 @@ namespace TheWorld.Models{
         }
 
         public async Task EnsureSeedData(){
-            if(!_worldContext.Trips.Any()){
+            if(!_worldContext.Trips.Any()){            
                 var usTrip = new Trip(){
                     DateCreated = DateTime.Now,
                     Name = "US Trip",

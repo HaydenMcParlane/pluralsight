@@ -32,9 +32,10 @@ namespace TheWorld.Controllers{
 
         [HttpPost("")]        
         public IActionResult InsertTrips([FromBody]ViewModels.Trip tripViewModel){
-            if(ModelState.IsValid){
-                var trip = Mapper.Map<Models.Trip>(tripViewModel);
-                return Created($"api/trips/{tripViewModel.Name}", Mapper.Map<ViewModels.Trip>(trip));
+            if(ModelState.IsValid){                
+                var newTrip = Mapper.Map<Models.Trip>(tripViewModel);
+                _worldRepository.AddTrip(newTrip);                
+                return Created($"api/trips/{tripViewModel.Name}", Mapper.Map<ViewModels.Trip>(newTrip));
             }
             return BadRequest(ModelState);
         }
