@@ -32,10 +32,12 @@ namespace TheWorld
             services.AddMvc();
             services.AddSingleton(_appConfig);
             services.AddDbContext<WorldContext>();            
+            services.AddTransient<WorldContextSeedData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
+        WorldContextSeedData seeder, ILoggerFactory loggerFactory)
         {
             // This code is called EVERY TIME a request is made. Equivalent of express middleware concept.
             loggerFactory.AddConsole();
@@ -58,7 +60,9 @@ namespace TheWorld
             Mapper.Initialize(config => 
             {
                 config.CreateMap<ViewModels.Trip, Models.Trip>().ReverseMap();
-            });                       
+            });                      
+
+            seeder.EnsureSeedData().Wait(); 
         }
     }
 }
