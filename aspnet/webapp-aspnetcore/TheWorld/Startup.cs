@@ -33,6 +33,7 @@ namespace TheWorld
             services.AddSingleton(_appConfig);
             services.AddDbContext<WorldContext>();            
             services.AddTransient<WorldContextSeedData>();
+            services.AddScoped<IWorldRepository, WorldRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

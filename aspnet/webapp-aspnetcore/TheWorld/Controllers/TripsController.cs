@@ -4,25 +4,26 @@ using AutoMapper;
 using Microsoft.Extensions.Logging;
 using TheWorld.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TheWorld.Controllers{
     [Route("api/trips")]
     public class TripsController : Controller {
 
         private ILogger<TripsController> _logger;
-        private WorldContext _dbcontext;
+        private IWorldRepository _worldRepository;
 
-        public TripsController(WorldContext dbcontext, ILogger<TripsController> logger)
+        public TripsController(IWorldRepository worldRepository, ILogger<TripsController> logger)
         {            
-            _logger = logger;
-            _dbcontext = dbcontext;
+            _logger = logger;            
+            _worldRepository = worldRepository;
         }
 
         [HttpGet("")]
         public IActionResult GetTrips(){
             try{
-                var trips = _dbcontext.Trips;
-                return Ok(new ViewModels.Trip(){ Name = "My Trip"});
+                return Ok(_worldRepository.GetTrips());                
             }catch(Exception ex){
                 _logger.LogError($"Failed to get trips: {ex}");
                 return BadRequest("Get request failed.");
