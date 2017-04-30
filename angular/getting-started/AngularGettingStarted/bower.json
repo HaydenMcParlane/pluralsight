@@ -1,0 +1,20 @@
+{
+  "name": "AngularGettingStarted",
+  "homepage": "https://github.com/HaydenMcParlane/pluralsight",
+  "authors": [
+    "haydenmcp <hayden.mcparlane@gmail.com>"
+  ],
+  "description": "Pluralsight tutorial for angular js.",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.4"
+  }
+}
