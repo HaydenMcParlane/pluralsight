@@ -1,5 +1,5 @@
 (function(){
-angular.module("start.core", []).controller("StartController", [ '$scope', StartController]);
+angular.module("start.core", []).controller("StartController", [ StartController ]);
 
 function StartController(){    
     this.entries = [];

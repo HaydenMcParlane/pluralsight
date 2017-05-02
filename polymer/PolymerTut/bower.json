@@ -1,0 +1,17 @@
+{
+  "name": "PolymerTut",
+  "homepage": "https://github.com/HaydenMcParlane/pluralsight",
+  "authors": [
+    "haydenmcp <hayden.mcparlane@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
