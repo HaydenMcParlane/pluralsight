@@ -1,0 +1,14 @@
+{
+  "name": "polymertut",
+  "version": "1.0.0",
+  "description": "We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hayden mcparlane",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.0"
+  }
+}
